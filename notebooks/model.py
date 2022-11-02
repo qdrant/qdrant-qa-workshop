@@ -75,12 +75,13 @@ class TweetsQAModel(TrainableModel):
         super().__init__(*args, **kwargs)
 
     def configure_loss(self) -> SimilarityLoss:
-        # `symmetric` means that we take into account correctness of both
-        # the closest answer to a question and the closest question to an answer
-        return MultipleNegativesRankingLoss(symmetric=True)
+        # TODO: choose a loss function and create its instance
+        # See: https://quaterion.qdrant.tech/api/index.html#implementations
+        raise NotImplementedError
 
     def configure_optimizers(self):
-        return Adam(self.model.parameters(), lr=10e-5)
+        # TODO: define how to optimize the network
+        raise NotImplementedError
 
     def configure_encoders(self) -> Union[Encoder, Dict[str, Encoder]]:
         base_model = SentenceTransformer(self.model_name)
@@ -90,7 +91,9 @@ class TweetsQAModel(TrainableModel):
         return encoder
 
     def configure_head(self, input_embedding_size: int) -> EncoderHead:
-        return SkipConnectionHead(input_embedding_size)
+        # TODO: define the head layer
+        # See: https://quaterion-models.qdrant.tech/api/index.html#head-layers
+        raise NotImplementedError
 
     def configure_caches(self):
         return CacheConfig(CacheType.AUTO, batch_size=256)
