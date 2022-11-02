@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "qdrant-qa-workshop"
+version = "0.1.0"
+description = ""
+authors = ["Kacper Łukawski <lukawski.kacper@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.11"
+qdrant-client = { git = "https://github.com/qdrant/qdrant_client.git", branch = "master" }
+quaterion = "^0.1.31"
+jupyter = "^1.0.0"
+pandas = "^1.5.1"
+datasets = "^2.6.1"
+sentence-transformers = "^2.2.2"
+scikit-learn = "^1.1.3"
+matplotlib = "^3.6.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+

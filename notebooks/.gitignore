@@ -1,0 +1,6 @@
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+lightning_logs
+tweets_qa_servable
+__pycache__
+
